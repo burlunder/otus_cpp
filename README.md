@@ -1,2 +1,3 @@
-# otus_cpp
-homeworks and other stuff
+# otus_cpp_01
+
+Otus 01 helloworld homework
