@@ -29,13 +29,14 @@ set_target_properties(gtest_version PROPERTIES
 
 target_link_libraries(helloworld_cli  PRIVATE
     helloworld
-    Threads::Threads
 )
 
 
 target_link_libraries(gtest_version
     ${GTEST_LIBRARIES}
     helloworld
+    Threads::Threads
+    pthread
 )
 
 
