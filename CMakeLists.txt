@@ -1,12 +1,13 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 if (NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
-    set (ENV{TRAVIS_BUILD_NUMBER} "42"})
+    set (ENV{TRAVIS_BUILD_NUMBER} "42")
 endif()
 
 project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+find_package(GTest)
 
 configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
