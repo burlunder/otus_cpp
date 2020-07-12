@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.2)
 
+if (NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
+    set (ENV{TRAVIS_BUILD_NUMBER} "42"})
+endif()
+
 project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Threads REQUIRED)
