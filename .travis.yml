@@ -4,8 +4,8 @@ compiler: clang
 addons:
   apt:
     packages:
-      - libboost-test-dev
       - libgtest-dev
+      - libpthread-stubs0-dev
 script:
   - cmake .
   - cmake --build .

@@ -6,6 +6,7 @@ endif()
 
 project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
+find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)
 
 configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
@@ -28,6 +29,7 @@ set_target_properties(gtest_version PROPERTIES
 
 target_link_libraries(helloworld_cli  PRIVATE
     helloworld
+    Threads::Threads
 )
 
 
