@@ -4,14 +4,13 @@ compiler: clang
 addons:
   apt:
     packages:
-    - libboost-test-dev
-    - libgtest-dev
-    - libspdlog-dev
+      - libboost-test-dev
+      - libgtest-dev
 script:
-- cmake .
-- cmake --build .
-- cmake --build . --target test
-- cmake --build . --target package
+  - cmake .
+  - cmake --build .
+  - cmake --build . --target test
+  - cmake --build . --target package
 
 before_deploy:
   - sed -i "s/__VERSION__/$TRAVIS_BUILD_NUMBER/g" bintray-descriptor.json
@@ -23,4 +22,3 @@ deploy:
   file: bintray-descriptor.json
   user: $BINTRAY_USER
   key: $BINTRAY_API_KEY
-
